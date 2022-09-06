@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const authRouter = require("./authRouter");
-const PORT = process.env.PORT || 5000;
+const PORT = 3001;
 const db = `mongodb+srv://temadev:recomend23@cluster0.n8n92uv.mongodb.net/chicboard?retryWrites=true&w=majority`;
 const app = express();
 
