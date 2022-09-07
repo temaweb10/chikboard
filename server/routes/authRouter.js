@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("./authController");
+const controller = require("../controllers/authController");
 const { check } = require("express-validator");
-const roleMiddleware = require("./middleware/roleMiddleware");
+const roleMiddleware = require("../middleware/roleMiddleware");
 router.post(
   "/auth/regisration",
   [

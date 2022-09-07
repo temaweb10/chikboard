@@ -1,7 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const authRouter = require("./authRouter");
+const authRouter = require("./routes/authRouter");
+const testRouter = require("./routes/testRoutes");
 const PORT = 3001;
 const db = `mongodb+srv://temadev:recomend23@cluster0.n8n92uv.mongodb.net/chicboard?retryWrites=true&w=majority`;
 const app = express();
@@ -28,3 +29,4 @@ const start = async () => {
 start();
 
 app.use(authRouter);
+app.use(testRouter);
