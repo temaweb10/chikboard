@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require("../controllers/authController");
 const { check } = require("express-validator");
 const roleMiddleware = require("../middleware/roleMiddleware");
+const authModdleware = require("../middleware/authMiddleware");
 router.post(
   "/auth/regisration",
   [
@@ -15,6 +16,7 @@ router.post(
   controller.registration
 );
 router.post("/auth/login", controller.login);
+router.get("/auth", authModdleware, controller.auth);
 router.get("/auth/users", roleMiddleware(["USER"]), controller.getUsers);
 router.get("/auth/us", controller.us);
 
